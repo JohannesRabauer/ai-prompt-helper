@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
-  images: {
-    unoptimized: true,
-  },
   basePath: process.env.NODE_ENV === 'production' ? '/ai-prompt-helper' : '',
 }
-
-module.exports = nextConfig
