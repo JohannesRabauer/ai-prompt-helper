@@ -32,8 +32,8 @@ jobs:
       - name: Build project
         run: |
           npm run build
-          ls -la
-          ls -la out || echo "out directory not found"
+          echo "Listing contents of out directory:"
+          ls -la out
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: out
 
   deploy:
     needs: build
