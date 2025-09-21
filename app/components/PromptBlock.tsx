@@ -7,6 +7,7 @@ interface PromptBlockProps {
   category: string;
   title: string;
   description: string;
+  promptText: string;
   selected: boolean;
   onClick: () => void;
   customInput?: string;
@@ -15,8 +16,10 @@ interface PromptBlockProps {
 }
 
 export const PromptBlock: React.FC<PromptBlockProps> = ({
+  id,
   title,
   description,
+  promptText,
   selected,
   onClick,
   customInput,
@@ -24,6 +27,8 @@ export const PromptBlock: React.FC<PromptBlockProps> = ({
   hasCustomInput
 }) => {
   const [isFocused, setIsFocused] = useState(false);
+
+  const resultingText = `${promptText}${customInput ? ` ${customInput}` : ''}`;
 
   return (
     <div
@@ -40,7 +45,7 @@ export const PromptBlock: React.FC<PromptBlockProps> = ({
     >
       <h3 className="text-lg font-medium text-gray-100 mb-1">{title}</h3>
       <p className="text-sm text-gray-400">{description}</p>
-      
+
       {hasCustomInput && selected && (
         <div className="mt-3">
           <input
@@ -53,7 +58,13 @@ export const PromptBlock: React.FC<PromptBlockProps> = ({
           />
         </div>
       )}
-      
+
+      {selected && (
+        <div className="mt-3 text-sm text-indigo-400">
+          Resulting Text: <span className="text-gray-100">{resultingText}</span>
+        </div>
+      )}
+
       {selected && (
         <div className="absolute -top-2 -right-2">
           <div className="bg-indigo-500 rounded-full p-1">
