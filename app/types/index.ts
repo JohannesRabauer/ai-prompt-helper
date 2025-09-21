@@ -23,6 +23,7 @@ export interface Block {
 export interface BlockSelection {
   blockId: string;
   customInput?: string;
+  highlight?: boolean; // Added to track highlighted blocks
 }
 
 export interface PromptTemplate {
