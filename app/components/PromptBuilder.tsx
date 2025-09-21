@@ -24,17 +24,21 @@ export const PromptBuilder = () => {
     setSelectedBlocks((prev) => {
       const isSelected = prev.some((b) => b.blockId === block.id);
       if (isSelected) {
-        return prev.map((b) =>
-          b.blockId === block.id ? { ...b, highlight: true } : { ...b, highlight: false }
-        );
+        // Deselect the block if already selected
+        return prev.filter((b) => b.blockId !== block.id);
       }
+      // Select the block and ensure only the clicked block is highlighted
       return [...prev, { blockId: block.id, highlight: true }];
     });
   };
 
   const handleCustomInput = (blockId: string, value: string) => {
     setSelectedBlocks((prev) =>
-      prev.map((b) => (b.blockId === blockId ? { ...b, customInput: value } : b))
+      prev.map((b) => ({
+        ...b,
+        customInput: b.blockId === blockId ? value : b.customInput,
+        highlight: b.blockId === blockId, // Highlight the block being edited
+      }))
     );
   };
 
