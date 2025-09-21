@@ -5,7 +5,10 @@ export type BlockCategory =
   | 'parameters'
   | 'tone'
   | 'output'
-  | 'template';
+  | 'template'
+  | 'critical-thinking' // Added new category
+  | 'how-tos' // Added new category
+  | 'hacks'; // Added new category
 
 export interface Block {
   id: string;

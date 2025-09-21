@@ -96,5 +96,67 @@ export const blocks: Block[] = [
     promptText: 'Make sure each point is explained in',
     hasCustomInput: true,
     customInputPlaceholder: 'Level of detail (e.g., brief, detailed, comprehensive)'
+  },
+
+  // Adding new blocks for critical thinking, how-tos, and hacks
+
+  // Critical Thinking Blocks
+  {
+    id: 'critical-evaluate',
+    category: 'critical-thinking',
+    title: 'Evaluate Pros and Cons',
+    description: 'Critically evaluate the advantages and disadvantages of a topic',
+    promptText: 'Critically evaluate the pros and cons of',
+    hasCustomInput: true,
+    customInputPlaceholder: 'What topic should be evaluated?'
+  },
+  {
+    id: 'critical-challenges',
+    category: 'critical-thinking',
+    title: 'Identify Challenges',
+    description: 'Highlight potential challenges and risks',
+    promptText: 'Identify the challenges and risks associated with',
+    hasCustomInput: true,
+    customInputPlaceholder: 'What topic should be analyzed for challenges?'
+  },
+
+  // How-To Blocks
+  {
+    id: 'howto-improve',
+    category: 'how-tos',
+    title: 'How to Improve',
+    description: 'Provide actionable steps to improve a process or skill',
+    promptText: 'Provide actionable steps to improve',
+    hasCustomInput: true,
+    customInputPlaceholder: 'What process or skill should be improved?'
+  },
+  {
+    id: 'howto-start',
+    category: 'how-tos',
+    title: 'How to Start',
+    description: 'Guide on starting a new project or task',
+    promptText: 'Provide a guide on how to start',
+    hasCustomInput: true,
+    customInputPlaceholder: 'What project or task should be started?'
+  },
+
+  // Hacks Blocks
+  {
+    id: 'hack-productivity',
+    category: 'hacks',
+    title: 'Productivity Hacks',
+    description: 'Share tips to boost productivity',
+    promptText: 'Share productivity hacks for',
+    hasCustomInput: true,
+    customInputPlaceholder: 'What area should the productivity hacks focus on?'
+  },
+  {
+    id: 'hack-efficiency',
+    category: 'hacks',
+    title: 'Efficiency Hacks',
+    description: 'Provide tips to work more efficiently',
+    promptText: 'Provide efficiency hacks for',
+    hasCustomInput: true,
+    customInputPlaceholder: 'What task or process should be optimized?'
   }
 ];
